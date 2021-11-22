@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册-YJF摄影展</title>
+    <link href="css/global.css" type="text/css" rel="stylesheet">
+    <link href="css/login.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <form action="login.html" method="post">
+        <fieldset>
+            <legend>
+                <!--表单的标题图片-->
+                用户注册
+            </legend>
+            <p>
+                <label class="title" for="name">用户名:</label>
+                <input type="text" name="name" id="name" placeholder="请输入英文字母或中文字符"><br />
+                <label class="title" for="email">邮箱:</label>
+                <input type="email" name="email" id="email" placeholder="请输入xxxxx@xxx.xxx"><br />
+                <label class="title" for="password">密码:</label>
+                <input type="password" name="password" id="password" placeholder="请输入密码"><br />
+                <label class="title" for="password_confirm">确认密码:</label>
+                <input type="password" name="password_confirm" id="password_confirm" placeholder="确认密码"><br />
+            </p>
+            <input type="submit" value="注册" id="submit">
+            <hr class="seperator"/>
+            <p>已有账号？<a href="login.html">去登录</a></p>
+        </fieldset>
+        <footer class="tips">
+            <p>当您注册时，就代表您已经同意我们的<a href="UserAgreement.html">用户协议</a></p>
+        </footer>
+    </form>
+</body>
+</html>
