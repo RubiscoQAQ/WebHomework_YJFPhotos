@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆-YJF摄影展</title>
+    <link href="stylesheets/global.css" type="text/css" rel="stylesheet">
+    <link href="stylesheets/login.css" type="text/css" rel="stylesheet">
+    <script src="javascripts/login.js" type="text/javascript" rel="script"></script>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>
+            <!--表单的标题图片-->
+            用户登录
+        </legend>
+        <p>
+            <label class="title" for="email">邮箱:</label>
+            <input type="email" name="email" id="email" placeholder="请输入邮箱地址"><br />
+            <label class="title" for="password">密码:</label>
+            <input type="password" name="password" id="password" placeholder="请输入密码"><br />
+        </p>
+        <input type="button" value="登录" id="submit" onclick="login()">
+        <hr class="seperator"/>
+        <p>没有账号？<a href="register.html">去注册</a></p>
+    </fieldset>
+    <footer class="tips">
+        <p>当您登录时，就代表您已经同意我们的<a href="UserAgreement.html">用户协议</a></p>
+    </footer>
+</form>
+</body>
+</html>
