@@ -1,9 +1,17 @@
 var express = require('express');
 //var router = express.Router();
 var router = require('./SQL/sql')
-
-
+var session = require('express-session')
 /* GET home page. */
+router.get('/session',function (req,res,next){
+  var user = req.session.userMsg;
+  console.log(user);
+  res.send(user);
+})
+router.get('/sessionClear',function (req,res,next){
+  req.session.userMsg = {};
+  res.send('finish');
+})
 router.get('/', function(req, res, next) {
   res.render('login');
 });

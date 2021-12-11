@@ -5,19 +5,36 @@
     <title>我的信息-YJF摄影展</title>
     <link href="stylesheets/global.css" type="text/css" rel="stylesheet">
     <link href="stylesheets/login.css" type="text/css" rel="stylesheet">
+    <link href="stylesheets/subPage.css" type="text/css" rel="stylesheet">
+    <script src="javascripts/MyInfo.js" type="text/javascript" rel="script"></script>
 </head>
 <body>
+<header>
+    <div id="login">
+        <h1>YJF摄影展</h1>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li class="type"><a href="index.html">主页</a></li>
+            <li class="type"><a href="index.html#building">建筑</a></li>
+            <li class="type"><a href="index.html#people">人像</a></li>
+            <li class="type"><a href="index.html#sightseeing">风景</a></li>
+            <li class="type"><a href="MyInfo.html">我的信息</a></li>
+        </ul>
+    </nav>
+</header>
 <form>
     <fieldset>
         <legend>
             用户信息
         </legend>
         <p>
+            <label class="title" for="name">用户名:</label>
+            <input type="text" id="name" readonly = readonly><br />
             <label class="title" for="email">邮箱:</label>
-            <input type="email" name="email" id="email" placeholder="请输入邮箱地址"><br />
-            <label class="title" for="password">密码:</label>
-            <input type="password" name="password" id="password" placeholder="请输入密码"><br />
+            <input type="text" id="email" readonly = readonly><br />
         </p>
+        <input type="button" value="登出" id="submit" onclick="clean()">
     </fieldset>
 </form>
 </body>

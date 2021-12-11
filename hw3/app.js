@@ -19,10 +19,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//添加session保存用户信息
+app.use(session({
+  secret:'123456',
+  name:'Rubisco',
+  cookie:{maxAge:60000},
+  resave:true,
+  saveUninitialized:false
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//添加session保存用户信息
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

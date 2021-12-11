@@ -49,8 +49,12 @@ router.post('/index.html', function(req, res, next) {
             console.log(e.stack);
             return;
         }
-        console.log(user);
         if (userMsg.password === user.passwd) {
+            req.session.userMsg = {
+                name: user.userName,
+                email: user.email
+            };
+            //保存登录信息
             console.log('登录成功');
             res.send('{"code":"1"}');
         } else {
