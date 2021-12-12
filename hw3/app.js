@@ -22,10 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //添加session保存用户信息
 app.use(session({
   secret:'123456',
-  name:'Rubisco',
-  cookie:{maxAge:60000},
-  resave:true,
-  saveUninitialized:false
+  name:'hw3',
+  cookie:{maxAge:6000000},
+  resave:false,
+  saveUninitialized:true
 }))
 
 app.use('/', indexRouter);
