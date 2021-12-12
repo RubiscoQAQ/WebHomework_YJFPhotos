@@ -64,3 +64,6 @@ footer{
     display: none;
     color: rgb(217, 33, 17);
 }
+canvas{
+    margin-left: 25%;
+}

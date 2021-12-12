@@ -7,6 +7,15 @@ function sign_up() {
         let userPass = document.getElementById("password").value;
         let password_confirm = document.getElementById("password_confirm").value;
         let name = document.getElementById('name').value;
+        let verifyCode = document.getElementById('verifycode').value;
+        if(!isSameCode(verifyCode,VerifyCode)){
+            let promptArea = document.getElementById("passwordError");
+            promptArea.innerText = "验证码错误";
+            promptArea.style.display = 'inline-block';
+            document.getElementById("verifycode").value = '';
+            newCode('verifypic',200,60);
+            return false;
+        }
         let fetchResponse = fetch('/login.html', {
             method: 'post',
             headers: {

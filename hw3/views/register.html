@@ -23,6 +23,9 @@
                 <input type="password" name="password" id="password" placeholder="请输入密码"><br />
                 <label class="title" for="password_confirm">确认密码:</label>
                 <input type="password" name="password_confirm" id="password_confirm" placeholder="确认密码"><br />
+                <label class="title" for="verifycode">验证码:</label>
+                <input type="text" name="verifycode" id="verifycode" placeholder="请输入验证码"><br />
+                <canvas id="verifypic" width="200" height="60" onclick="newCode('verifypic',200,60)"></canvas>
             </p>
             <span id="passwordError"></span>
             <input type="button" value="注册" id="submit" onclick="sign_up()">
@@ -32,6 +35,7 @@
         <footer class="tips">
             <p>当您注册时，就代表您已经同意我们的<a href="UserAgreement.html">用户协议</a></p>
         </footer>
+        <script src="javascripts/VerifyCode.js" type="text/javascript" rel="script"></script>
     </form>
 </body>
 </html>

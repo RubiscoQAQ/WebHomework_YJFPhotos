@@ -23,7 +23,16 @@ function checkStrong(value) {
 function login() {
     let email = document.getElementById("email").value;
     let userPass = document.getElementById("password").value;
-    console.log(userPass);
+    let verifyCode = document.getElementById('verifycode').value;
+
+    if(!isSameCode(verifyCode,VerifyCode)){
+        let promptArea = document.getElementById("passwordError");
+        promptArea.innerText = "验证码错误";
+        promptArea.style.display = 'inline-block';
+        document.getElementById("verifycode").value = '';
+        newCode('verifypic',200,60);
+        return false;
+    }
     if (email && (checkStrong(userPass)>1)) {
         let fetchResponse = fetch('/index.html', {
             method: 'post',
@@ -40,13 +49,21 @@ function login() {
                 console.log("here");
                 window.location = '/index.html';
             } else {
-                alert("用户名或者密码错误");
-                location.reload();
+                let promptArea = document.getElementById("passwordError");
+                promptArea.innerText = "用户名或密码错误";
+                promptArea.style.display = 'inline-block';
+                document.getElementById("verifycode").value = '';
+                document.getElementById("password").value = '';
+                //alert("用户名或者密码错误");
+                //location.reload();
             }
         });
         return true;
     }
-    alert("用户名或者密码错误!");
-    location.reload();
+    let promptArea = document.getElementById("passwordError");
+    promptArea.innerText = "用户名或密码错误";
+    promptArea.style.display = 'inline-block';
+    document.getElementById("verifycode").value = '';
+    document.getElementById("password").value = '';
     return false;
 }

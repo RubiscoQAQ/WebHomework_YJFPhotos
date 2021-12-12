@@ -13,9 +13,10 @@ fetchResponse.then((response) => response.json()).then(response => {
     }
 });
 function clean() {
-
+    let fetchResponse = fetch('/sessionClear', {
+        method: 'get',
+    });
     alert("登出成功，2秒后自动跳转");
     window.setTimeout("window.location='/'", 2000);
-
     return false;
 }

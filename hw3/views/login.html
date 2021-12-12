@@ -19,7 +19,11 @@
             <input type="email" name="email" id="email" placeholder="请输入邮箱地址"><br />
             <label class="title" for="password">密码:</label>
             <input type="password" name="password" id="password" placeholder="请输入密码"><br />
+            <label class="title" for="verifycode">验证码:</label>
+            <input type="text" name="verifycode" id="verifycode" placeholder="请输入验证码"><br />
+            <canvas id="verifypic" width="200" height="60" onclick="newCode('verifypic',200,60)"></canvas>
         </p>
+        <span id="passwordError"></span>
         <input type="button" value="登录" id="submit" onclick="login()">
         <hr class="seperator"/>
         <p>没有账号？<a href="register.html">去注册</a></p>
@@ -27,6 +31,7 @@
     <footer class="tips">
         <p>当您登录时，就代表您已经同意我们的<a href="UserAgreement.html">用户协议</a></p>
     </footer>
+    <script src="javascripts/VerifyCode.js" type="text/javascript" rel="script"></script>
 </form>
 </body>
 </html>
