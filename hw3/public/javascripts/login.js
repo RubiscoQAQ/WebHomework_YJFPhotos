@@ -67,3 +67,23 @@ function login() {
     document.getElementById("password").value = '';
     return false;
 }
+//用于在登录状态下直接进入主页
+let fetchResponse = fetch('/session', {
+    method: 'get',
+});
+try{
+    fetchResponse.then((response) => response.json()).then(response => {
+        if(!isEmptyObject(response)){
+            window.setTimeout("window.location='/index.html'", 500);
+        }
+    });
+}catch (e) {
+    console.log(e.stack);
+}
+function isEmptyObject( obj ) {
+    var name;
+    for ( name in obj ) {
+        return false;
+    }
+    return true;
+}
